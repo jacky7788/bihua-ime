@@ -1,0 +1,14 @@
+# 產出物（由 ./build.sh 重新生成）
+build/
+*.app
+
+# macOS
+.DS_Store
+
+# 唔會公開嘅原始資料（授權問題 + 體積）
+data/graphics.txt
+
+*.log
+
+# 編譯出嚟嘅工具
+imctl

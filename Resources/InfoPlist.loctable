@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Base</key>
+	<dict>
+		<key>CFBundleName</key>
+		<string>Bihua</string>
+		<key>com.jackyng.inputmethod.Bihua.Mode</key>
+		<string>Bihua Stroke</string>
+	</dict>
+	<key>en</key>
+	<dict>
+		<key>CFBundleName</key>
+		<string>Bihua Stroke</string>
+		<key>com.jackyng.inputmethod.Bihua.Mode</key>
+		<string>Bihua Stroke</string>
+	</dict>
+	<key>zh_TW</key>
+	<dict>
+		<key>CFBundleName</key>
+		<string>筆畫</string>
+		<key>com.jackyng.inputmethod.Bihua.Mode</key>
+		<string>筆畫</string>
+	</dict>
+	<key>zh_HK</key>
+	<dict>
+		<key>CFBundleName</key>
+		<string>筆畫</string>
+		<key>com.jackyng.inputmethod.Bihua.Mode</key>
+		<string>筆畫</string>
+	</dict>
+	<key>zh_CN</key>
+	<dict>
+		<key>CFBundleName</key>
+		<string>笔画</string>
+		<key>com.jackyng.inputmethod.Bihua.Mode</key>
+		<string>笔画</string>
+	</dict>
+</dict>
+</plist>
