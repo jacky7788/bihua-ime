@@ -105,6 +105,15 @@ stroke names (cnchar)  →  5-stroke code  →  code table  →  candidates
 24 checks: code-table lookups, commit/backspace/cancel, paging, numpad, custom
 keys, Caps Lock pass-through, frequency ordering, and suggestion chaining.
 
+## Gotcha: changing the bundle identifier
+
+macOS caches the bundle identifier of every input method. After changing
+`CFBundleIdentifier`, the system may keep recognising only the old one and
+`TISCreateInputSourceList` will not list the new bundle at all — restarting
+`imklaunchagent` / `TextInputMenuAgent` and forcing a LaunchServices
+re-registration did not help in my testing. A **full reboot** is required for
+macOS to rescan `~/Library/Input Methods`.
+
 ## Credits
 
 Stroke data from [cnchar](https://github.com/theajack/cnchar) (MIT), simplified↔

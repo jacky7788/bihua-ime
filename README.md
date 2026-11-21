@@ -137,6 +137,10 @@ cat /tmp/bihua.log         # 再打幾個字，睇有冇 handle 記錄
 
 `cat /tmp/bihua.log` 睇吓，或者改 `fontSize` 細啲再試。
 
+**改咗 bundle ID 之後輸入法消失**
+
+macOS 會記住每個輸入法嘅 bundle ID。改咗 ID 之後，系統可能仍然只認得舊嗰個，`TISCreateInputSourceList` 完全見唔到新 bundle（重啟 imklaunchagent、TextInputMenuAgent、強制 LaunchServices 登記都唔生效）——要**重啟整部機**才會重新掃描。所以唔好隨便改 ID。
+
 **想完全移除**
 
 ```bash
