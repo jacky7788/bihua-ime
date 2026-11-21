@@ -139,7 +139,7 @@ cat /tmp/bihua.log         # 再打幾個字，睇有冇 handle 記錄
 
 **改咗 bundle ID 之後輸入法消失**
 
-macOS 會記住每個輸入法嘅 bundle ID。改咗 ID 之後，系統可能仍然只認得舊嗰個，`TISCreateInputSourceList` 完全見唔到新 bundle（重啟 imklaunchagent、TextInputMenuAgent、強制 LaunchServices 登記都唔生效）——要**重啟整部機**才會重新掃描。所以唔好隨便改 ID。
+**唔好用 `io.github.*` 開頭。** 我實測 `io.github.jacky7788.bihua` 會完全註冊唔到——`TISCreateInputSourceList` 連 `includeAllInstalled` 都見唔到，重啟整部機、登出登入、重啟 imklaunchagent／TextInputMenuAgent、`lsregister -f` 全部冇用。只將同一個 bundle 嘅 ID 改成 `com.jacky7788.inputmethod.bihua`（其他乜都唔改）就即刻註冊成功。所以改 ID 一定用 `com.*`。
 
 **想完全移除**
 

@@ -105,14 +105,14 @@ stroke names (cnchar)  →  5-stroke code  →  code table  →  candidates
 24 checks: code-table lookups, commit/backspace/cancel, paging, numpad, custom
 keys, Caps Lock pass-through, frequency ordering, and suggestion chaining.
 
-## Gotcha: changing the bundle identifier
+## Gotcha: do not use an `io.github.*` bundle identifier
 
-macOS caches the bundle identifier of every input method. After changing
-`CFBundleIdentifier`, the system may keep recognising only the old one and
-`TISCreateInputSourceList` will not list the new bundle at all — restarting
-`imklaunchagent` / `TextInputMenuAgent` and forcing a LaunchServices
-re-registration did not help in my testing. A **full reboot** is required for
-macOS to rescan `~/Library/Input Methods`.
+Measured on macOS 27: with `io.github.jacky7788.bihua` the input method never
+appears in `TISCreateInputSourceList` — not with `includeAllInstalled`, not after
+a full reboot, not after a login cycle, restarting `imklaunchagent` /
+`TextInputMenuAgent`, or a forced `lsregister -f`. Changing only the identifier
+to `com.jacky7788.inputmethod.bihua` on the byte-identical bundle made it
+register immediately. If you fork this, keep a `com.*` identifier.
 
 ## Credits
 
