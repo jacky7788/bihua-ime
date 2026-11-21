@@ -4,13 +4,13 @@ set -eu
 cd "$(dirname "$0")"
 IM=./tools/imctl
 CUR=$($IM --get)
-if [ "$CUR" = "io.github.jacky7788.bihua" ]; then
+if [ "$CUR" = "com.jacky7788.inputmethod.bihua" ]; then
   PREV=$(cat /tmp/bihua-prev.txt 2>/dev/null || echo com.apple.keylayout.ABC)
   $IM "$PREV" >/dev/null 2>&1 || true
   echo "switched back to: $PREV"
 else
   echo "$CUR" > /tmp/bihua-prev.txt
-  $IM io.github.jacky7788.bihua >/dev/null 2>&1 || true
+  $IM com.jacky7788.inputmethod.bihua >/dev/null 2>&1 || true
   echo "switched to Bihua (was: $CUR)"
 fi
 echo "now: $($IM --get)"
