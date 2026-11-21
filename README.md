@@ -4,6 +4,19 @@
 
 諾基亞式五筆畫輸入法，**用簡體筆順打字，出繁體字**。純本地、無網絡、ad-hoc 簽名。
 
+## 係咩樣
+
+打「中」——`s` `g` `a` `s`（丨乛一丨）：
+
+![輸入中](docs/screenshot-composing.png)
+
+打完之後，候選窗自動換成下一個字嘅建議（右上角「聯」）：
+
+![聯想](docs/screenshot-suggestion.png)
+
+> 上圖係按實際渲染參數重畫嘅示意圖（字型、尺寸、顏色同 `CandidateCanvas.swift` 一致）。
+> 喺你部機上面，候選窗會喺打字位置下面彈出。
+
 ## 下載
 
 **[⬇ 下載最新版](https://github.com/jacky7788/bihua-ime/releases/latest)**（`BihuaIME-x.y.z.zip`）

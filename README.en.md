@@ -13,6 +13,21 @@ order of the simplified form** and it commits the **traditional** character.
 Built as a real system input method (InputMethodKit), so it works in every app —
 Safari, Word, Excel, Terminal, chat apps — not just one.
 
+## What it looks like
+
+Typing 中 — `s` `g` `a` `s` (丨乛一丨), ten candidates per page:
+
+![Composing](docs/screenshot-composing.png)
+
+After committing 中, the bar turns into next-character suggestions (the 聯
+marker on the right):
+
+![Suggestions](docs/screenshot-suggestion.png)
+
+> These are illustrations drawn from the same geometry, colours and font sizes
+> as `CandidateCanvas.swift`, not screen captures. On your machine the bar
+> appears just below the caret.
+
 ## Download
 
 **[⬇ Latest release](https://github.com/jacky7788/bihua-ime/releases/latest)** —
