@@ -12,3 +12,6 @@ data/graphics.txt
 
 # 編譯出嚟嘅工具
 imctl
+
+# Release 打包
+dist/
