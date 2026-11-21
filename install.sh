@@ -31,7 +31,7 @@ var n = 0
 for s in list {
     guard let p = TISGetInputSourceProperty(s, kTISPropertyInputSourceID) else { continue }
     let id = "\(Unmanaged<CFTypeRef>.fromOpaque(p).takeUnretainedValue())"
-    if id == "com.jackyng.inputmethod.Bihua" { n += 1 }
+    if id == "io.github.jacky7788.bihua" { n += 1 }
 }
 print(n > 0 ? "   ✓ 系統已登記（\(n) 個項目）" : "   ⚠️ 系統未登記，可能要登出再登入")
 EOF
