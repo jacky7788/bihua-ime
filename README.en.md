@@ -105,14 +105,20 @@ stroke names (cnchar)  →  5-stroke code  →  code table  →  candidates
 24 checks: code-table lookups, commit/backspace/cancel, paging, numpad, custom
 keys, Caps Lock pass-through, frequency ordering, and suggestion chaining.
 
-## Gotcha: do not use an `io.github.*` bundle identifier
+## Gotcha: what a bundle identifier may look like
 
-Measured on macOS 27: with `io.github.jacky7788.bihua` the input method never
-appears in `TISCreateInputSourceList` — not with `includeAllInstalled`, not after
-a full reboot, not after a login cycle, restarting `imklaunchagent` /
-`TextInputMenuAgent`, or a forced `lsregister -f`. Changing only the identifier
-to `com.jacky7788.inputmethod.bihua` on the byte-identical bundle made it
-register immediately. If you fork this, keep a `com.*` identifier.
+Measured on macOS 27, by swapping only the identifier on a byte-identical
+bundle and re-signing:
+
+| Identifier | Registered? |
+|---|---|
+| `com.bihua.inputmethod` (3 segments) | no |
+| `com.bihua.inputmethod.stroke` (4) | yes |
+| `com.jacky7788.inputmethod.bihua` (4) | yes |
+| `io.github.jacky7788.bihua` (4) | no — never appears in TIS at all, even after a reboot |
+
+So: use at least four segments and keep a `com.*` prefix. After changing it you
+must log out and back in before the input source list is rebuilt.
 
 ## Credits
 

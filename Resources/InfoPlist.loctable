@@ -6,35 +6,35 @@
 	<dict>
 		<key>CFBundleName</key>
 		<string>Bihua</string>
-		<key>com.jacky7788.inputmethod.bihua.Mode</key>
+		<key>com.bihua.inputmethod.stroke.Mode</key>
 		<string>Bihua Stroke</string>
 	</dict>
 	<key>en</key>
 	<dict>
 		<key>CFBundleName</key>
 		<string>Bihua Stroke</string>
-		<key>com.jacky7788.inputmethod.bihua.Mode</key>
+		<key>com.bihua.inputmethod.stroke.Mode</key>
 		<string>Bihua Stroke</string>
 	</dict>
 	<key>zh_TW</key>
 	<dict>
 		<key>CFBundleName</key>
 		<string>筆畫</string>
-		<key>com.jacky7788.inputmethod.bihua.Mode</key>
+		<key>com.bihua.inputmethod.stroke.Mode</key>
 		<string>筆畫</string>
 	</dict>
 	<key>zh_HK</key>
 	<dict>
 		<key>CFBundleName</key>
 		<string>筆畫</string>
-		<key>com.jacky7788.inputmethod.bihua.Mode</key>
+		<key>com.bihua.inputmethod.stroke.Mode</key>
 		<string>筆畫</string>
 	</dict>
 	<key>zh_CN</key>
 	<dict>
 		<key>CFBundleName</key>
 		<string>笔画</string>
-		<key>com.jacky7788.inputmethod.bihua.Mode</key>
+		<key>com.bihua.inputmethod.stroke.Mode</key>
 		<string>笔画</string>
 	</dict>
 </dict>
