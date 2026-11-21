@@ -76,7 +76,7 @@ final class CandidateCanvas: NSView {
         // 左邊：幾頁之前先有，等於原版 ◀
         if hasPrev {
             drawNav(x: x, symbol: "◀", key: keyForPrev(), font: navFont,
-                    keyFont: navFont, color: dimColor)
+                    keyFont: navFont, color: dimColor, yOffset: -3)
             x += navWidth
         }
 
@@ -116,11 +116,11 @@ final class CandidateCanvas: NSView {
             let attrs: [NSAttributedString.Key: Any] = [.font: pageFont, .foregroundColor: dimColor]
             let sz = pageText.size(withAttributes: attrs)
             NSAttributedString(string: pageText, attributes: attrs)
-                .draw(at: NSPoint(x: infoRect.midX - sz.width / 2, y: infoRect.minY + 1))
+                .draw(at: NSPoint(x: infoRect.midX - sz.width / 2, y: infoRect.minY - 1))
         }
         if hasNext {
             drawNav(x: infoRect.minX, symbol: "▶", key: keyForNext(), font: navFont,
-                    keyFont: navFont, color: dimColor, yOffset: 10)
+                    keyFont: navFont, color: dimColor, yOffset: 0)
         }
     }
 
@@ -130,11 +130,11 @@ final class CandidateCanvas: NSView {
         let attrs: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: color]
         let s = symbol.size(withAttributes: attrs)
         let cx = x + navWidth / 2
-        symbol.draw(at: NSPoint(x: cx - s.width / 2, y: 12 + yOffset), withAttributes: attrs)
+        symbol.draw(at: NSPoint(x: cx - s.width / 2, y: 10 + yOffset), withAttributes: attrs)
         if !key.isEmpty {
             let kattrs: [NSAttributedString.Key: Any] = [.font: keyFont, .foregroundColor: color]
             let ks = key.size(withAttributes: kattrs)
-            key.draw(at: NSPoint(x: cx - ks.width / 2, y: 30 + yOffset), withAttributes: kattrs)
+            key.draw(at: NSPoint(x: cx - ks.width / 2, y: 26 + yOffset), withAttributes: kattrs)
         }
     }
 

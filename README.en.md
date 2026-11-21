@@ -15,7 +15,10 @@ Safari, Word, Excel, Terminal, chat apps — not just one.
 
 ## What it looks like
 
-Typing 中 — `s` `g` `a` `s` (丨乛一丨), ten candidates per page:
+![Demo](docs/demo.gif)
+
+Typing 中 — `s` `g` `a` `s` (丨乛一丨); the candidate list narrows with every
+stroke:
 
 ![Composing](docs/screenshot-composing.png)
 
@@ -24,9 +27,7 @@ marker on the right):
 
 ![Suggestions](docs/screenshot-suggestion.png)
 
-> These are illustrations drawn from the same geometry, colours and font sizes
-> as `CandidateCanvas.swift`, not screen captures. On your machine the bar
-> appears just below the caret.
+> Real screen captures on macOS 27 (dark mode, typing into TextEdit).
 
 ## Download
 

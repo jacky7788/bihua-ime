@@ -6,7 +6,9 @@
 
 ## 係咩樣
 
-打「中」——`s` `g` `a` `s`（丨乛一丨）：
+![示範](docs/demo.gif)
+
+打「中」——`s` `g` `a` `s`（丨乛一丨），候選窗跟住你打嘅筆畫收窄：
 
 ![輸入中](docs/screenshot-composing.png)
 
@@ -14,8 +16,7 @@
 
 ![聯想](docs/screenshot-suggestion.png)
 
-> 上圖係按實際渲染參數重畫嘅示意圖（字型、尺寸、顏色同 `CandidateCanvas.swift` 一致）。
-> 喺你部機上面，候選窗會喺打字位置下面彈出。
+> 以上係 macOS 27 實機截圖（深色模式，TextEdit 入面打）。
 
 ## 下載
 
