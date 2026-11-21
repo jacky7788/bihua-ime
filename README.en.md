@@ -13,6 +13,15 @@ order of the simplified form** and it commits the **traditional** character.
 Built as a real system input method (InputMethodKit), so it works in every app —
 Safari, Word, Excel, Terminal, chat apps — not just one.
 
+## Download
+
+**[⬇ Latest release](https://github.com/jacky7788/bihua-ime/releases/latest)** —
+unzip, drop `BihuaIME.app` into `~/Library/Input Methods/`, then **log out and back
+in once**. The app is ad-hoc signed: on first launch use right-click → Open, or
+`xattr -dr com.apple.quarantine ~/Library/Input\ Methods/BihuaIME.app`.
+
+Prefer to build from source? See [Install](#install).
+
 ## Why
 
 macOS ships a stroke IME, but it is keyboard-only, has no frequency ranking, no

@@ -2,7 +2,20 @@
 
 [English](README.en.md)
 
-諾基亞式五筆畫輸入法，**用簡體筆順打字，出繁體字**。純本地、無網絡、ad-hoc 簽名，自己用。
+諾基亞式五筆畫輸入法，**用簡體筆順打字，出繁體字**。純本地、無網絡、ad-hoc 簽名。
+
+## 下載
+
+**[⬇ 下載最新版](https://github.com/jacky7788/bihua-ime/releases/latest)**（`BihuaIME-x.y.z.zip`）
+
+1. 解壓，將 `BihuaIME.app` 拖入 `~/Library/Input Methods/`
+2. **登出再登入一次**（macOS 喺登入時才建立輸入法選單）
+3. 選單列輸入法圖示 → **筆畫**
+
+ad-hoc 簽名，第一次開可能被 Gatekeeper 攔：右撳 › 打開，或者執行
+`xattr -dr com.apple.quarantine ~/Library/Input\ Methods/BihuaIME.app`。
+
+想自己編譯就睇下面「點裝」。
 
 ```
 打「马」嘅筆順 551  →  出「馬」
