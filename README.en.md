@@ -193,14 +193,18 @@ jieba two-char words ───────────────────�
 | Data | Used for | Licence |
 |---|---|---|
 | [cnchar](https://github.com/theajack/cnchar) | stroke names → 5-stroke codes (6939 chars) | MIT |
-| [OpenCC](https://github.com/BYVoid/OpenCC) | simplified → traditional | Apache-2.0 |
+| [OpenCC](https://github.com/BYVoid/OpenCC) | simplified → traditional, plus the reverse table for variants | Apache-2.0 |
 | [jieba](https://github.com/fxsjy/jieba) | character frequency, two-character words | MIT |
 
 Stroke mapping: 横/提 → 1, 竖/竖钩 → 2, 撇 → 3, 点/捺 → 4, every other turning
 stroke → 5.
 
-Result: **6654 codes, 7176 output characters** (184 KB JSON) and a suggestion table
-of 3499 heads / 18379 edges (135 KB). Both load once at launch; there are no network
+Result: **6654 codes, 7274 output characters** (185 KB JSON) and a suggestion table
+of 3499 heads / 18379 edges (135 KB).
+
+Traditional variants (`為`/`爲`, `裡`/`裏`, `麵`/`麪`) are filled in from OpenCC's
+reverse table `TSCharacters.txt` — a one-way simplified→traditional table only
+emits one form per character, which leaves the other variant untypeable. Both load once at launch; there are no network
 requests at runtime.
 
 ### Ranking

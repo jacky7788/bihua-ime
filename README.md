@@ -198,13 +198,16 @@ jieba 兩字詞     ────────────────────
 | 資料 | 用途 | 授權 |
 |---|---|---|
 | [cnchar](https://github.com/theajack/cnchar) | 筆順名稱 → 五筆碼（6939 個簡體字） | MIT |
-| [OpenCC](https://github.com/BYVoid/OpenCC) | 簡 → 繁對照 | Apache-2.0 |
+| [OpenCC](https://github.com/BYVoid/OpenCC) | 簡 → 繁對照，同反向表補異體 | Apache-2.0 |
 | [jieba](https://github.com/fxsjy/jieba) | 單字頻率、兩字詞（聯想） | MIT |
 
 筆形對應：橫/提 → 1，豎/豎鈎 → 2，撇 → 3，點/捺 → 4，其餘所有折筆 → 5。
 
-最終碼表：**6654 個碼、7176 個可輸出漢字**（184 KB JSON）；聯想表 3499 個起首字、
+最終碼表：**6654 個碼、7274 個可輸出漢字**（185 KB JSON）；聯想表 3499 個起首字、
 18379 條（135 KB）。兩者開機載入一次，runtime 冇網絡請求。
+
+繁體異體字（`為`／`爲`、`裡`／`裏`、`麵`／`麪`）係用 OpenCC 嘅**反向表**
+`TSCharacters.txt` 補齊——單靠簡→繁表每組只會出一個寫法，另一個就會打唔到。
 
 ### 候選排序
 

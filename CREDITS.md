@@ -6,6 +6,7 @@
 |---|---|---|---|
 | **cnchar-order** | 漢字筆順名稱（6939 字）→ 五筆碼 | MIT | [theajack/cnchar](https://github.com/theajack/cnchar) |
 | **OpenCC `STCharacters.txt`** | 簡 → 繁對照 | Apache-2.0 | [BYVoid/OpenCC](https://github.com/BYVoid/OpenCC) |
+| **OpenCC `TSCharacters.txt`** | 繁 → 簡反向表，用嚟補繁體異體（為／爲、裡／裏） | Apache-2.0 | [BYVoid/OpenCC](https://github.com/BYVoid/OpenCC) |
 | **jieba `dict.txt`** | 單字頻率、兩字詞（聯想） | MIT | [fxsjy/jieba](https://github.com/fxsjy/jieba) |
 
 `data/` 內嘅 `cnchar-5stroke.json`、`char-freq.json`、`predict.json` 係由上述資料**衍生**出嚟嘅中間產物，同樣按原授權提供。

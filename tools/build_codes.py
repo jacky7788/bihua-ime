@@ -28,8 +28,9 @@ def load_json(path):
         return json.load(f)
 
 
-def load_st(path):
-    st = {}
+def load_table(path):
+    """OpenCC 對照表：key -> [value...]"""
+    out = {}
     with open(path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
@@ -41,8 +42,12 @@ def load_st(path):
             key = parts[0].strip()
             vals = [v for v in parts[1].split(" ") if v]
             if len(key) == 1 and vals:
-                st[key] = vals
-    return st
+                out[key] = vals
+    return out
+
+
+def is_cjk_basic(ch):
+    return 0x4E00 <= ord(ch) <= 0x9FFF
 
 
 def load_freq():
@@ -69,8 +74,10 @@ def gb_level(ch):
 def main():
     os.makedirs(BUILD, exist_ok=True)
     stroke = load_json(os.path.join(DATA, "cnchar-5stroke.json"))
-    st = load_st(os.path.join(DATA, "STCharacters.txt"))
+    st = load_table(os.path.join(DATA, "STCharacters.txt"))
     freq = load_freq()
+    ts_path = os.path.join(DATA, "TSCharacters.txt")
+    ts = load_table(ts_path) if os.path.exists(ts_path) else {}
     print("字頻: %d 個" % len(freq))
     print("筆順字數: %d  簡繁條目: %d" % (len(stroke), len(st)))
 
@@ -86,6 +93,24 @@ def main():
         else:
             table[code].append((f, 0, gb_level(simp), simp))
             produced.add(simp)
+
+    # 異體補充：OpenCC 嘅 ST 表每組只出一個寫法（为→爲），但「為」一樣常用。
+    # 用反向表（繁→簡）補齊：任何繁體字，只要佢嘅簡體來源有碼，就用同一個碼。
+    variant = 0
+    skipped = 0
+    for t, simps in ts.items():
+        if t in produced:
+            continue
+        if not is_cjk_basic(t):
+            skipped += 1
+            continue
+        for simp in simps:
+            if simp in stroke:
+                table[stroke[simp]].append((freq.get(simp, 0), 2, gb_level(t), t))
+                produced.add(t)
+                variant += 1
+                break
+    print("異體補充: %d 個（另有 %d 個非基本區，略過）" % (variant, skipped))
 
     # 排序：主要繁體寫法 -> 常用字 -> 碼位
     entries = []

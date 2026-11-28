@@ -215,6 +215,14 @@ check("聯想時打筆畫 → 開始新輸入", client.marked == "丨", "marked=
 controller.handle(key("\u{1b}", ESC), client: client)
 check("Esc 之後冇殘留", client.marked == "" && press("q") == false)
 
+// 9f. 異體字（OpenCC 反向表補齊）
+let v1 = BihuaEngine.shared.candidates(for: "4354")        // 为 -> 爲 為
+let v2 = BihuaEngine.shared.candidates(for: "2511211")     // 里 -> 裏 裡
+let v3 = BihuaEngine.shared.candidates(for: "132522111")   // 面 -> 麪 麵
+check("異體：為 打得出", v1.contains("為"), "got=\(String(v1.prefix(4)))")
+check("異體：裡 打得出", v2.contains("裡"), "got=\(String(v2.prefix(5)))")
+check("異體：麵 打得出", v3.contains("麵"), "got=\(String(v3.prefix(4)))")
+
 // 10. 候選窗尺寸（10 個字 + 前後頁）
 let canvas = CandidateCanvas()
 canvas.setup(chars: Array("一二三四五六七八九十"),
